@@ -1,0 +1,21 @@
+{
+  "name": "hello-world-electron-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^23.1.1",
+    "electron-store": "^8.1.0",
+    "logitech-g27": "^1.2.2"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "logitech",
+    "wheel"
+  ],
+  "author": "Joshua Fountain",
+  "license": "GNU"
+}

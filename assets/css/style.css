@@ -1,0 +1,107 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #353535;
+    color: white;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+.flex-direction-column {
+    flex-direction: column;
+}
+.flex-align-center {
+    align-items: center;
+}
+
+.wheel-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wheel-preview img {
+    margin: 0.5em;
+}
+.wheel-preview .wheel-preview-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em;
+}
+.wheel-preview .wheel-preview-line output {
+    font-size: small;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+form .form-submit-button {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: medium;
+    background: linear-gradient(to right, #0CAFFF 0%, #0047AB 100%);
+    color: white;
+    padding: .5em 1.5em;
+    margin: 2em auto;
+    border-radius: 24px;
+    border-width: 0;
+    transition: all 0.1s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+form .form-submit-button:hover {
+    transform: translateY(-5%);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.08);
+}
+form .form-submit-button svg {
+    margin: 0 1em 0 1em;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.slider label:first-child {
+    font-weight: bold;
+}
+.slider div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.slider div input[type='range'] {
+    appearance: none;
+    cursor: pointer;
+    background: linear-gradient(to right, #0CAFFF 0%, #0047AB 100%);
+    margin-top: 0.5em;
+    border-radius: 4px;
+    height: 4px;
+    width: 250px;
+}
+.slider div input[type='range']::-webkit-slider-thumb {
+	appearance: none;
+    cursor: pointer;
+    background: #64a2ff;
+	width: 16px;
+	height: 16px;
+	border-radius: 16px;
+	transition: all 0.15s ease-in-out;
+}
+.slider div input[type='range']::-webkit-slider-thumb:hover {
+	background: #7db1ff;
+	transform: scale(1.15);
+}
+.slider div output {
+    margin-left: 0.5em;
+	color: white;
+    font-size: small;
+}

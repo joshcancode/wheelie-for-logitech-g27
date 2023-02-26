@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Wheelie for Logitech G27</title>
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';"/>
+        <link href="assets/css/style.css" rel="stylesheet"/>
+    </head>
+
+    <!-- Disable dragging of HTML elements in and out of this window -->
+    <body draggable="false" class="noselect">
+        <div class="main">
+            <h1 style="margin: 0">Wheelie</h1>
+            <p style="margin: 0 0 2em 0">for Logitech G27</p>
+        
+            <div class="flex flex-direction-column flex-align-center">
+                <img id="wheelPreview" src="assets/svg/steering-wheel-white.svg" width="150" height="auto"/>
+                
+                <div class="flex flex-direction-column flex-align-center" style="margin: 2em;">
+                    <svg width="300" height="4">
+                        <line x1="0" y1="0" x2="300" y2="0" stroke="#0047AB" stroke-width="4"/>
+                        <line id="wheelTurnBarFill" x1="150" y1="0" x2="300" y2="0" stroke="#0CAFFF" stroke-width="4"/>
+                    </svg>
+                    <output id="wheelTurnBarValue"></output>
+                </div>
+            </div>
+
+            <form id="wheel-cfg-form">
+                <div class="slider">
+                    <label>Wheel Range</label>
+                    <div>
+                        <input id="wheel-range-slider" name="wheelRange" type="range" min="270" max="900" value="270">
+                        <output id="wheel-range-value"></output>
+                    </div>
+                </div>
+                <button class="form-submit-button" type="submit">
+                    <svg width="32" height="32" style="display: none;">
+                        <circle cx="16" cy="16" fill="none" stroke="#e15b64" stroke-width="2" r="12" stroke-dasharray="50">
+                            <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 16 16;360 16 16" keyTimes="0;1"></animateTransform>
+                        </circle>
+                    </svg>
+                    Apply
+                </button>
+            </form>
+        </div>
+    </body>
+
+    <script>
+        const wheelCfgForm = document.getElementById("wheel-cfg-form");
+        wheelCfgForm.addEventListener('submit', (event) => {
+            const cfg = event.target;
+            window.wheelInterface.updateCfg(cfg.wheelRange.value);
+        });
+
+        const wheelRangeValue = document.getElementById("wheel-range-value");
+        document.getElementById("wheel-range-slider").addEventListener('input', (event) => {
+            wheelRangeValue.innerHTML = event.target.value + '°';
+        });
+    </script>
+</html>

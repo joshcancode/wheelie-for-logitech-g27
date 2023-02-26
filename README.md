@@ -1,0 +1,1 @@
+This project was something I started working on as a replacement to the old legacy Logitech Gaming software, however I sold the wheel before I finished the software. I encourage anyone who stumbles upon this to contribute if you can!
